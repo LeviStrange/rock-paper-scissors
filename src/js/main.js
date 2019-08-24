@@ -2,34 +2,44 @@ export default class RockPaperScissors {
     constructor(){
         this.choices = [
             {
-              name: 'paper',
-              beats: 'rock'
+                name: 'rock',
+                beats: ['scissors', 'lizard']
             },
             {
-              name: 'rock',
-              beats: 'scissors'
+                name: 'paper',
+                beats: ['rock', 'spock']
             },
             {
-              name: 'scissors',
-              beats: 'paper'    
+                name: 'scissors',
+                beats: ['paper', 'lizard']    
+            },
+            {
+                name: 'spock',
+                beats: ['scissors', 'rock']
+                
+            },
+            {
+                name: 'lizard',
+                beats: ['spock', 'paper']
             }
+            
           ]
     }
   
     getUserChoice(userInput) {
-      const validOption = this.choices.find(choice => choice.name === userInput)
-      console.log('valud', validOption);
-      if (validOption) {
-          return validOption;
+      const userOption = this.choices.find(choice => choice.name === userInput)
+      console.log('valud', userOption);
+      if (userOption) {
+          return userOption;
       } else {
           return false;
       }
-  }
+    }
   
     getComputerChoice() {
-      const randomNumber = Math.floor(Math.random() * 3);
-      return this.choices[randomNumber]
-  }
+      const computerChoice = Math.round(Math.random() * 3);
+      return this.choices[computerChoice]
+    }
   
     playGame(name) {
           var playerOne;

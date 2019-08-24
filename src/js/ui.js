@@ -1,5 +1,5 @@
 /**
- * This is the MVP of the Rock Paper Scissors game
+ * 
  *  
  */
 
@@ -15,19 +15,18 @@ for(var i = 0; i < buttons.length; i++) {
         const result = game.playGame(this.id)
         console.log(this.id);
         document.getElementById('result').innerHTML = result;
-        handleResult(result);
+        generateResult(result);
     }, false);
 
 }
 
-export const handleResult = function(result) {
+export const generateResult = function(result) {
     // document.getElementById('computerChoice').className = `fas fa-hand-${result.playerTwo.name} fa-7x fa-border`
-    document.getElementById('result').innerHTML = result.playerTwo.name;
-
+    document.getElementById('computerChoice').innerHTML = result.playerTwo.name;
     let resultMessage;
-    if(result.playerOne.beats === result.playerTwo.name) {
+    if(result.playerOne.beats.includes(result.playerTwo.name )) {
         resultMessage = 'Player one wins!'
-    } else if(result.playerTwo.beats === result.playerOne.name) {
+    } else if(result.playerTwo.beats.includes(result.playerOne.name )) {
         resultMessage = 'Player two wins!'
     } else {
         resultMessage = 'Tie Game!'
