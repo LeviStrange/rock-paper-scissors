@@ -19,7 +19,8 @@ module.exports = {
 		extensions: ['.js']
 	},
 	entry: {
-		'main': './src/js/main.js'
+		'main': './src/js/main.js',
+		'ui': './src/js/ui.js'
 	},
 	output: {
 		path: path.join(process.cwd(), 'build'),
