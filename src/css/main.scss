@@ -1,7 +1,8 @@
 body {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+	sans-serif;
+	text-align: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(
@@ -10,9 +11,27 @@ body {
     rgba(0, 128, 128, 1) 100%
   );
 
-  .option {
-	  border-radius: 25px;
-	  background-color: aquamarine;
-	  border: none;
-  }
+ 
+
+	.scoreBoard{
+		display: flex;
+		p {
+			flex: auto;
+			
+		}
+	}
+
+
+
+	.option {
+		border-radius: 25px;
+		background-color: aquamarine;
+		border: none;
+	}
+ 
+	#result {
+		
+		font-size: 40px;
+	}
+
 }
