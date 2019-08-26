@@ -5,37 +5,36 @@
 	<meta charset="UTF-8">
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://kit.fontawesome.com/abdc3d3d12.js"></script>
+
 </head>
 <body>
 	<h1>Rock, Paper, Scissors, Lizard, Spock</h1>
-	<!-- <div>
-		<ul>
-			<li>Reset Scores!</li>
-			<li>Choose for me!</li>
-			<li>RPSLP - <a href="https://www.youtube.com/watch?v=x5Q6-wMx-K8">The Origin.</a></li>
-		</ul>
-	</div> -->
 	<div class="scoreBoard">
 		<p>Your Score: <span id="userScore">0</span></p>
 		<p>Opponent's Score: <span id="computerScore">0</span></p>
 	</div>
+	
 	<div class="optionList">
-		<p>Choose your weapon</p>
-		<button id="rock" class="option">Rock</button>
-		<button id="paper" class="option">Paper</button>
-		<button id="scissors" class="option">Scissors</button>
-		<button id="lizard" class="option">Lizard</button>
-		<button id="spock" class="option">Spock</button>
+		<p>Take your pick:</p>
+		<button id="rock" class="btn option flaticon-diamond"><i class="far fa-hand-rock"></i></button>
+		<button id="paper" class="btn option"><i class="far fa-hand-paper"></i></button>
+		<button id="scissors" class="btn option"><i class="far fa-hand-scissors"></i></button>
+		<button id="lizard" class="btn option"><i class="far fa-hand-lizard"></i></button>
+		<button id="spock" class="btn option"><i class="far fa-hand-spock"></i></button>
 	</div>
 	<div>
-		<p>Or....Let the CPU pick!</p>
-		<button id="random" class="option">Choose for me!</button>	
+		<p>Or...Let the Computer pick!</p>
+		<button id="random" class="btn option">Choose for me!</button>	
 	</div>
 	<div>
-		<p>Your Opponent!</p>
 		<div id="computerChoice"></div>
+		<div>
+				<button id="resetCounter" class="btn">reset scores</button>
+		</div>	
 	</div>
 	
 	<div id="result"><div>
+	
 </body>
 </html>

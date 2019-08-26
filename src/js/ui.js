@@ -7,44 +7,47 @@ import RockPaperScissors from './main'
 
 const rockPaperScissors = new RockPaperScissors();
 
+// Helper functions
+let userScore = document.getElementById('userScore').textContent;
+let userIntScore = parseInt(userScore, 10);
+let compScore = document.getElementById('computerScore').textContent;
+let compIntScore = parseInt(compScore, 10);
 const buttons = document.getElementsByClassName("option");
+
 for(var i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', function() {
         const result = rockPaperScissors.playGame(this.id)
         document.getElementById('result').innerHTML = result;
-        generateResult(result); 
-
+        generateResult(result);
+        resetCounter(); 
     }, false);
 }
 
 export const generateResult = function(result) {
-    document.getElementById('computerChoice').innerHTML = 'The computer picked ' + result.playerTwo.name;
-    
+    document.getElementById('computerChoice').innerHTML = 'The computer picked ' + result.playerTwo.name;    
     let resultMessage;
-    
-    // let computerScoreCount = 0;
-
-    if(result.playerOne.beats.includes(result.playerTwo.name )) {
-        let userScoreCount = 0;
-        let userScore = document.getElementById('userScore').innerHTML;
-        userScoreCount += 1;
-        console.log("user", userScoreCount)
-        userScore = userScoreCount;
-
+    if (result.playerOne.beats.includes(result.playerTwo.name )) {
         resultMessage = 'You Win!';
-        
-    }else if(result.playerTwo.beats.includes(result.playerOne.name )) {
+        userIntScore = userIntScore + 1;
+        document.getElementById('userScore').textContent = userIntScore;
+    } else if(result.playerTwo.beats.includes(result.playerOne.name )) {
         resultMessage = 'You Lose!';
-        // let computerScore = document.getElementById('computerScore').innerHTML;
-        // computerScoreCount;
-        // console.log(computerScore);
-
+        compIntScore = compIntScore + 1;
+        document.getElementById('computerScore').textContent = compIntScore;
     }else {
         resultMessage = 'Tie Game!';
     }
+    console.log('userintscore', userIntScore);
+    console.log('cpuscore',compIntScore );
+    document.getElementById('result').innerHTML = resultMessage;   
+}
 
-    document.getElementById('result').innerHTML = resultMessage;
-    
-    
-   
+export function resetCounter() {
+    let reset = document.getElementById('resetCounter');
+    reset.addEventListener('click', function(){
+        document.getElementById('computerScore').textContent = 0;
+        userIntScore = 0;
+        document.getElementById('userScore').textContent = 0;
+        compIntScore = 0;
+    });
 }
