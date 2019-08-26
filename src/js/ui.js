@@ -24,7 +24,8 @@ for(var i = 0; i < buttons.length; i++) {
 }
 
 export const generateResult = function(result) {
-    document.getElementById('computerChoice').innerHTML = 'The computer picked ' + result.playerTwo.name;    
+    document.getElementById('computerChoice').innerHTML = 'Your opponent picked ' + result.playerTwo.name;    
+    document.getElementById('randomChoice').innerHTML = 'You picked ' + result.playerOne.name;
     let resultMessage;
     if (result.playerOne.beats.includes(result.playerTwo.name )) {
         resultMessage = 'You Win!';
