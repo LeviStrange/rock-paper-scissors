@@ -23,18 +23,14 @@ export default class RockPaperScissors {
             {
                 name: 'lizard',
                 beats: ['spock', 'paper']
-            }
-            
-          ]
+            } 
+        ]
     }
   
     getUserChoice(userInput) {
       const userOption = this.choices.find(choice => choice.name === userInput)
-      console.log('valud', userOption);
       if (userOption) {
           return userOption;
-      } else {
-          return false;
       }
     }
   
