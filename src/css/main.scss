@@ -11,17 +11,12 @@ body {
     rgba(0, 128, 128, 1) 100%
   );
 
- 
-
 	.scoreBoard{
 		display: flex;
 		p {
-			flex: auto;
-			
+			flex: auto;	
 		}
 	}
-
-
 
 	.option {
 		border-radius: 25px;
@@ -29,8 +24,7 @@ body {
 		border: none;
 	}
  
-	#result {
-		
+	#result {	
 		font-size: 40px;
 	}
 
