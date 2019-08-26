@@ -3,17 +3,15 @@
  *  
  */
 
-import '../css/main.scss';
+
 import RockPaperScissors from './main'
 
-const game = new RockPaperScissors();
+const rockPaperScissors = new RockPaperScissors();
 
 const buttons = document.getElementsByClassName("option");
 for(var i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', function() {
-      
-        const result = game.playGame(this.id)
-        console.log(this.id);
+        const result = rockPaperScissors.playGame(this.id)
         document.getElementById('result').innerHTML = result;
         generateResult(result);
     }, false);
@@ -21,7 +19,6 @@ for(var i = 0; i < buttons.length; i++) {
 }
 
 export const generateResult = function(result) {
-    // document.getElementById('computerChoice').className = `fas fa-hand-${result.playerTwo.name} fa-7x fa-border`
     document.getElementById('computerChoice').innerHTML = result.playerTwo.name;
     let resultMessage;
     if(result.playerOne.beats.includes(result.playerTwo.name )) {
@@ -31,7 +28,5 @@ export const generateResult = function(result) {
     } else {
         resultMessage = 'Tie Game!'
     }
-
-    //The results are in!
     document.getElementById('result').innerHTML = resultMessage
 }
