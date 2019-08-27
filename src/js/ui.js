@@ -1,13 +1,11 @@
 /**
  * This is the file for all the UI modification for RPSLS.
- *  
  */
 
 import RockPaperScissors from './main'
 
 const rockPaperScissors = new RockPaperScissors();
 
-// Helper functions
 let userScore = document.getElementById('userScore').textContent;
 let userIntScore = parseInt(userScore, 10);
 let compScore = document.getElementById('computerScore').textContent;
@@ -26,6 +24,7 @@ for(var i = 0; i < buttons.length; i++) {
 export const generateResult = function(result) {
     document.getElementById('computerChoice').innerHTML = 'Your opponent picked ' + result.playerTwo.name;    
     document.getElementById('randomChoice').innerHTML = 'You picked ' + result.playerOne.name;
+    
     let resultMessage;
     if (result.playerOne.beats.includes(result.playerTwo.name )) {
         resultMessage = 'You Win!';
@@ -38,8 +37,6 @@ export const generateResult = function(result) {
     }else {
         resultMessage = 'Tie Game!';
     }
-    console.log('userintscore', userIntScore);
-    console.log('cpuscore',compIntScore );
     document.getElementById('result').innerHTML = resultMessage;   
 }
 

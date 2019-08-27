@@ -1,16 +1,26 @@
 body {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+	font-family: 
+    "Ubuntu",  "Helvetica Neue",
 	sans-serif;
 	text-align: center;
 	color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
   background: linear-gradient(
     to left,
     rgb(12, 25, 58) 0%,
     rgba(0, 128, 128, 1) 100%
   );
+	a {
+		text-decoration: none;
+		color: white;
+	}
+
+	a:hover {
+		text-decoration: underline;
+		color: #eee;
+	}
 
 	.scoreBoard{
 		display: flex;
@@ -37,4 +47,6 @@ body {
 	.far {
 		font-size: 50px;
 	}
+	
 }
+
